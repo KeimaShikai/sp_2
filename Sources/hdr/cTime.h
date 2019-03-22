@@ -56,7 +56,7 @@ std::ostream& operator << (std::ostream &s, const my_time &t)
 
 std::istream& operator >> (std::istream &s, my_time &t)
 {
-    std::cin >> t.hours >> t.minutes;
+    s >> t.hours >> t.minutes;
     return s;
 }
 
@@ -68,6 +68,12 @@ bool increase(my_time &t1, my_time &t2)
 bool decrease(my_time &t1, my_time &t2)
 {
     return t1 < t2;
+}
+
+bool less_then_noon(my_time &t1)
+{
+    my_time noon(12, 0);
+    return t1 < noon;
 }
 
 #endif
