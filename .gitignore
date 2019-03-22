@@ -1,0 +1,13 @@
+*.swp
+
+CMakeFiles/
+
+CMakeLists.txt.user
+sample.cbp
+cmake_install.cmake
+compile_commands.json
+CMakeCache.txt
+MakeCache.txt
+Makefile
+
+example
