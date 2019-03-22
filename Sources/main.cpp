@@ -96,6 +96,11 @@ std::queue<my_time> search(std::stack<my_time> sample)
     return qu;
 }
 
+int count(std::vector<my_time> sample)
+{
+    return std::count_if(sample.begin(), sample.end(), [](my_time t){return (less_then_noon(t));});
+}
+
 std::vector<my_time> merge(std::stack<my_time> s1, std::queue<my_time> q1)
 {
     std::vector<my_time> temp;
@@ -111,6 +116,7 @@ std::vector<my_time> merge(std::stack<my_time> s1, std::queue<my_time> q1)
     }
     return temp;
 }
+
 
 int main()
 {
@@ -134,13 +140,13 @@ int main()
     std::cout << "Container A: ";
     output(sample1);
     //4, 5
-    std::cout << "Searching... Success!";
+    std::cout << "Searching... Success!\n";
     std::queue<my_time> sample2 = search(sample1);
     //6
     std::cout << "Container B: ";
     output(sample2);
     //7
-    std::cout << "Sorting... Success!";
+    std::cout << "Sorting... Success!\n";
     sort_increase(sample1);
     sort_increase(sample2);
     //8
@@ -156,7 +162,13 @@ int main()
             it != sample3.end(); ++it)
         std::cout << *it << " || ";
     std::cout << std::endl;
-    //11 count_if
-
+    //11
+    int counter = count(sample3);
+    std::cout << "Items found: " << counter << ".\n";
+    //12
+    if (counter > 0)
+        std::cout << "Item found: True\n";
+    else
+        std::cout << "Item found: False\n";
     return 0;
 }
