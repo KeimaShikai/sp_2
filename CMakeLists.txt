@@ -16,7 +16,6 @@ list(APPEND HEADERS "Sources/hdr")
 
 #source files
 list(APPEND SOURCES "Sources/hdr/cTime.h")
-#list(APPEND SOURCES "Sources/src/cTime.cpp")
 list(APPEND SOURCES "Sources/main.cpp")
 
 include_directories(${HEADERS})
