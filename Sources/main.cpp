@@ -152,7 +152,7 @@ std::queue<my_time> search(std::stack<my_time> s)
 
     std::vector<my_time> temp2(temp1.size());
     auto it = std::copy_if(temp1.begin(), temp1.end(), temp2.begin(),
-                           [](my_time t){return (less_then_noon(t));});
+                           [](my_time t){return (less_than_noon(t));});
     temp2.resize(std::distance(temp2.begin(), it));
 
     std::queue<my_time> q;
@@ -167,7 +167,7 @@ std::queue<my_time> search(std::stack<my_time> s)
 int count(std::vector<my_time> sample)
 {
     return std::count_if(sample.begin(), sample.end(),
-                         [](my_time t){return (less_then_noon(t));});
+                         [](my_time t){return (less_than_noon(t));});
 }
 
 std::vector<my_time> merge(std::vector<my_time> v1, std::vector<my_time> v2)

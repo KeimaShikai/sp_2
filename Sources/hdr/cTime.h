@@ -51,7 +51,7 @@ bool decrease(my_time &t1, my_time &t2)
     return t1 < t2;
 }
 
-bool less_then_noon(my_time &t1)
+bool less_than_noon(my_time &t1)
 {
     my_time noon(12, 0);
     return t1 < noon;
