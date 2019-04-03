@@ -63,7 +63,7 @@ int main()
 std::stack<my_time> input_from_file(const char *fName)
 {
     std::stack<my_time> temp;
-    std::ifstream is("Files/for1");
+    std::ifstream is(fName);
     if (!is.is_open())
     {
         std::cout << "Can't open the file!\n";
